@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            prosty = new Button();
-            naukowy = new Button();
             rad = new Button();
             deg = new Button();
             sin = new Button();
@@ -67,31 +65,16 @@
             exp = new Button();
             ans = new Button();
             display = new TextBox();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            prostyKalkulatorToolStripMenuItem = new ToolStripMenuItem();
+            naukowyKalkulatorToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // prosty
-            // 
-            prosty.Location = new Point(100, 12);
-            prosty.Name = "prosty";
-            prosty.Size = new Size(237, 39);
-            prosty.TabIndex = 0;
-            prosty.Text = "Kalkulator prosty";
-            prosty.UseVisualStyleBackColor = true;
-            prosty.Click += prosty_Click;
-            // 
-            // naukowy
-            // 
-            naukowy.Location = new Point(362, 12);
-            naukowy.Name = "naukowy";
-            naukowy.Size = new Size(237, 39);
-            naukowy.TabIndex = 1;
-            naukowy.Text = "Kalkulator naukowy";
-            naukowy.UseVisualStyleBackColor = true;
-            naukowy.Click += naukowy_Click;
             // 
             // rad
             // 
-            rad.Location = new Point(11, 123);
+            rad.Location = new Point(446, 66);
             rad.Name = "rad";
             rad.Size = new Size(100, 40);
             rad.TabIndex = 2;
@@ -101,7 +84,7 @@
             // 
             // deg
             // 
-            deg.Location = new Point(117, 123);
+            deg.Location = new Point(552, 66);
             deg.Name = "deg";
             deg.Size = new Size(100, 40);
             deg.TabIndex = 3;
@@ -111,7 +94,7 @@
             // 
             // sin
             // 
-            sin.Location = new Point(117, 169);
+            sin.Location = new Point(552, 112);
             sin.Name = "sin";
             sin.Size = new Size(100, 40);
             sin.TabIndex = 5;
@@ -121,7 +104,7 @@
             // 
             // inv
             // 
-            inv.Location = new Point(11, 169);
+            inv.Location = new Point(446, 112);
             inv.Name = "inv";
             inv.Size = new Size(100, 40);
             inv.TabIndex = 4;
@@ -131,7 +114,7 @@
             // 
             // Cos
             // 
-            Cos.Location = new Point(117, 215);
+            Cos.Location = new Point(552, 158);
             Cos.Name = "Cos";
             Cos.Size = new Size(100, 40);
             Cos.TabIndex = 7;
@@ -141,7 +124,7 @@
             // 
             // pi
             // 
-            pi.Location = new Point(11, 215);
+            pi.Location = new Point(446, 158);
             pi.Name = "pi";
             pi.Size = new Size(100, 40);
             pi.TabIndex = 6;
@@ -151,7 +134,7 @@
             // 
             // tan
             // 
-            tan.Location = new Point(117, 261);
+            tan.Location = new Point(552, 204);
             tan.Name = "tan";
             tan.Size = new Size(100, 40);
             tan.TabIndex = 9;
@@ -161,7 +144,7 @@
             // 
             // e
             // 
-            e.Location = new Point(11, 261);
+            e.Location = new Point(446, 204);
             e.Name = "e";
             e.Size = new Size(100, 40);
             e.TabIndex = 8;
@@ -180,7 +163,7 @@
             // 
             // root
             // 
-            root.Location = new Point(223, 261);
+            root.Location = new Point(658, 204);
             root.Name = "root";
             root.Size = new Size(100, 40);
             root.TabIndex = 13;
@@ -190,7 +173,7 @@
             // 
             // log
             // 
-            log.Location = new Point(223, 215);
+            log.Location = new Point(658, 158);
             log.Name = "log";
             log.Size = new Size(100, 40);
             log.TabIndex = 12;
@@ -200,7 +183,7 @@
             // 
             // ln
             // 
-            ln.Location = new Point(223, 169);
+            ln.Location = new Point(658, 112);
             ln.Name = "ln";
             ln.Size = new Size(100, 40);
             ln.TabIndex = 11;
@@ -210,7 +193,7 @@
             // 
             // silnia
             // 
-            silnia.Location = new Point(223, 123);
+            silnia.Location = new Point(658, 66);
             silnia.Name = "silnia";
             silnia.Size = new Size(100, 40);
             silnia.TabIndex = 10;
@@ -220,37 +203,37 @@
             // 
             // jeden
             // 
-            jeden.Location = new Point(329, 261);
+            jeden.Location = new Point(13, 204);
             jeden.Name = "jeden";
             jeden.Size = new Size(100, 40);
             jeden.TabIndex = 17;
             jeden.Text = "1";
             jeden.UseVisualStyleBackColor = true;
-            jeden.Click += jeden_Click;
+            jeden.Click += EnterNumbers;
             // 
             // cztery
             // 
-            cztery.Location = new Point(329, 215);
+            cztery.Location = new Point(13, 158);
             cztery.Name = "cztery";
             cztery.Size = new Size(100, 40);
             cztery.TabIndex = 16;
             cztery.Text = "4";
             cztery.UseVisualStyleBackColor = true;
-            cztery.Click += cztery_Click;
+            cztery.Click += EnterNumbers;
             // 
             // siedem
             // 
-            siedem.Location = new Point(329, 169);
+            siedem.Location = new Point(13, 112);
             siedem.Name = "siedem";
             siedem.Size = new Size(100, 40);
             siedem.TabIndex = 15;
             siedem.Text = "7";
             siedem.UseVisualStyleBackColor = true;
-            siedem.Click += siedem_Click;
+            siedem.Click += EnterNumbers;
             // 
             // lnawias
             // 
-            lnawias.Location = new Point(329, 123);
+            lnawias.Location = new Point(13, 66);
             lnawias.Name = "lnawias";
             lnawias.Size = new Size(100, 40);
             lnawias.TabIndex = 14;
@@ -260,37 +243,37 @@
             // 
             // dwa
             // 
-            dwa.Location = new Point(435, 261);
+            dwa.Location = new Point(119, 204);
             dwa.Name = "dwa";
             dwa.Size = new Size(100, 40);
             dwa.TabIndex = 21;
             dwa.Text = "2";
             dwa.UseVisualStyleBackColor = true;
-            dwa.Click += dwa_Click;
+            dwa.Click += EnterNumbers;
             // 
             // piec
             // 
-            piec.Location = new Point(435, 215);
+            piec.Location = new Point(119, 158);
             piec.Name = "piec";
             piec.Size = new Size(100, 40);
             piec.TabIndex = 20;
             piec.Text = "5";
             piec.UseVisualStyleBackColor = true;
-            piec.Click += piec_Click;
+            piec.Click += EnterNumbers;
             // 
             // osiem
             // 
-            osiem.Location = new Point(435, 169);
+            osiem.Location = new Point(119, 112);
             osiem.Name = "osiem";
             osiem.Size = new Size(100, 40);
             osiem.TabIndex = 19;
             osiem.Text = "8";
             osiem.UseVisualStyleBackColor = true;
-            osiem.Click += osiem_Click;
+            osiem.Click += EnterNumbers;
             // 
             // pnawias
             // 
-            pnawias.Location = new Point(435, 123);
+            pnawias.Location = new Point(119, 66);
             pnawias.Name = "pnawias";
             pnawias.Size = new Size(100, 40);
             pnawias.TabIndex = 18;
@@ -300,37 +283,37 @@
             // 
             // trzy
             // 
-            trzy.Location = new Point(541, 261);
+            trzy.Location = new Point(225, 204);
             trzy.Name = "trzy";
             trzy.Size = new Size(100, 40);
             trzy.TabIndex = 25;
             trzy.Text = "3";
             trzy.UseVisualStyleBackColor = true;
-            trzy.Click += trzy_Click;
+            trzy.Click += EnterNumbers;
             // 
             // szesc
             // 
-            szesc.Location = new Point(541, 215);
+            szesc.Location = new Point(225, 158);
             szesc.Name = "szesc";
             szesc.Size = new Size(100, 40);
             szesc.TabIndex = 24;
             szesc.Text = "6";
             szesc.UseVisualStyleBackColor = true;
-            szesc.Click += szesc_Click;
+            szesc.Click += EnterNumbers;
             // 
             // dziewiec
             // 
-            dziewiec.Location = new Point(541, 169);
+            dziewiec.Location = new Point(225, 112);
             dziewiec.Name = "dziewiec";
             dziewiec.Size = new Size(100, 40);
             dziewiec.TabIndex = 23;
             dziewiec.Text = "9";
             dziewiec.UseVisualStyleBackColor = true;
-            dziewiec.Click += dziewiec_Click;
+            dziewiec.Click += EnterNumbers;
             // 
             // procent
             // 
-            procent.Location = new Point(541, 123);
+            procent.Location = new Point(225, 66);
             procent.Name = "procent";
             procent.Size = new Size(100, 40);
             procent.TabIndex = 22;
@@ -340,38 +323,38 @@
             // 
             // odejmowanie
             // 
-            odejmowanie.Location = new Point(647, 261);
+            odejmowanie.Location = new Point(331, 204);
             odejmowanie.Name = "odejmowanie";
             odejmowanie.Size = new Size(100, 40);
             odejmowanie.TabIndex = 29;
             odejmowanie.Text = "-";
             odejmowanie.UseVisualStyleBackColor = true;
-            odejmowanie.Click += odejmowanie_Click;
+            odejmowanie.Click += numop;
             // 
             // mnozenie
             // 
-            mnozenie.Location = new Point(647, 215);
+            mnozenie.Location = new Point(331, 158);
             mnozenie.Name = "mnozenie";
             mnozenie.RightToLeft = RightToLeft.Yes;
             mnozenie.Size = new Size(100, 40);
             mnozenie.TabIndex = 28;
             mnozenie.Text = "X";
             mnozenie.UseVisualStyleBackColor = true;
-            mnozenie.Click += mnozenie_Click;
+            mnozenie.Click += numop;
             // 
             // dzielenie
             // 
-            dzielenie.Location = new Point(647, 169);
+            dzielenie.Location = new Point(331, 112);
             dzielenie.Name = "dzielenie";
             dzielenie.Size = new Size(100, 40);
             dzielenie.TabIndex = 27;
             dzielenie.Text = "/";
             dzielenie.UseVisualStyleBackColor = true;
-            dzielenie.Click += dzielenie_Click;
+            dzielenie.Click += numop;
             // 
             // ac
             // 
-            ac.Location = new Point(647, 123);
+            ac.Location = new Point(331, 66);
             ac.Name = "ac";
             ac.Size = new Size(100, 40);
             ac.TabIndex = 26;
@@ -381,17 +364,17 @@
             // 
             // dodawanie
             // 
-            dodawanie.Location = new Point(647, 307);
+            dodawanie.Location = new Point(331, 250);
             dodawanie.Name = "dodawanie";
             dodawanie.Size = new Size(100, 40);
             dodawanie.TabIndex = 36;
             dodawanie.Text = "+";
             dodawanie.UseVisualStyleBackColor = true;
-            dodawanie.Click += dodawanie_Click;
+            dodawanie.Click += numop;
             // 
             // rowna
             // 
-            rowna.Location = new Point(541, 307);
+            rowna.Location = new Point(225, 250);
             rowna.Name = "rowna";
             rowna.Size = new Size(100, 40);
             rowna.TabIndex = 35;
@@ -401,47 +384,47 @@
             // 
             // dot
             // 
-            dot.Location = new Point(435, 307);
+            dot.Location = new Point(119, 250);
             dot.Name = "dot";
             dot.Size = new Size(100, 40);
             dot.TabIndex = 34;
             dot.Text = ".";
             dot.UseVisualStyleBackColor = true;
-            dot.Click += dot_Click;
+            dot.Click += EnterNumbers;
             // 
             // zero
             // 
-            zero.Location = new Point(329, 307);
+            zero.Location = new Point(13, 250);
             zero.Name = "zero";
             zero.Size = new Size(100, 40);
             zero.TabIndex = 33;
             zero.Text = "0";
             zero.UseVisualStyleBackColor = true;
-            zero.Click += zero_Click;
+            zero.Click += EnterNumbers;
             // 
             // xdoy
             // 
-            xdoy.Location = new Point(223, 307);
+            xdoy.Location = new Point(658, 250);
             xdoy.Name = "xdoy";
             xdoy.Size = new Size(100, 40);
             xdoy.TabIndex = 32;
             xdoy.Text = "x^y";
             xdoy.UseVisualStyleBackColor = true;
-            xdoy.Click += xdoy_Click;
+            xdoy.Click += numop;
             // 
             // exp
             // 
-            exp.Location = new Point(117, 307);
+            exp.Location = new Point(552, 250);
             exp.Name = "exp";
             exp.Size = new Size(100, 40);
             exp.TabIndex = 31;
             exp.Text = "Exp";
             exp.UseVisualStyleBackColor = true;
-            exp.Click += exp_Click;
+            exp.Click += numop;
             // 
             // ans
             // 
-            ans.Location = new Point(11, 307);
+            ans.Location = new Point(446, 250);
             ans.Name = "ans";
             ans.Size = new Size(100, 40);
             ans.TabIndex = 30;
@@ -451,17 +434,48 @@
             // 
             // display
             // 
-            display.Location = new Point(100, 70);
+            display.Location = new Point(12, 31);
             display.Name = "display";
-            display.Size = new Size(499, 27);
+            display.Size = new Size(746, 27);
             display.TabIndex = 37;
             display.TextChanged += display_TextChanged;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(764, 28);
+            menuStrip1.TabIndex = 38;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { prostyKalkulatorToolStripMenuItem, naukowyKalkulatorToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(46, 24);
+            fileToolStripMenuItem.Text = "File";
+            // 
+            // prostyKalkulatorToolStripMenuItem
+            // 
+            prostyKalkulatorToolStripMenuItem.Name = "prostyKalkulatorToolStripMenuItem";
+            prostyKalkulatorToolStripMenuItem.Size = new Size(222, 26);
+            prostyKalkulatorToolStripMenuItem.Text = "Prosty kalkulator";
+            prostyKalkulatorToolStripMenuItem.Click += prostyKalkulatorToolStripMenuItem_Click;
+            // 
+            // naukowyKalkulatorToolStripMenuItem
+            // 
+            naukowyKalkulatorToolStripMenuItem.Name = "naukowyKalkulatorToolStripMenuItem";
+            naukowyKalkulatorToolStripMenuItem.Size = new Size(222, 26);
+            naukowyKalkulatorToolStripMenuItem.Text = "Naukowy kalkulator";
+            naukowyKalkulatorToolStripMenuItem.Click += naukowyKalkulatorToolStripMenuItem_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(761, 405);
+            ClientSize = new Size(764, 294);
             Controls.Add(display);
             Controls.Add(dodawanie);
             Controls.Add(rowna);
@@ -498,19 +512,19 @@
             Controls.Add(inv);
             Controls.Add(deg);
             Controls.Add(rad);
-            Controls.Add(naukowy);
-            Controls.Add(prosty);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            Click += EnterNumbers;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button prosty;
-        private Button naukowy;
         private Button rad;
         private Button deg;
         private Button sin;
@@ -548,5 +562,9 @@
         private Button exp;
         private Button ans;
         private TextBox display;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem prostyKalkulatorToolStripMenuItem;
+        private ToolStripMenuItem naukowyKalkulatorToolStripMenuItem;
     }
 }
